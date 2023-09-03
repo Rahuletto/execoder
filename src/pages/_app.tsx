@@ -11,6 +11,7 @@ import { useEffect } from "react";
 // FONT
 import { JetBrains_Mono } from "next/font/google";
 
+
 const jb = JetBrains_Mono({
   fallback: ["monospace"],
   weight: ["500", "700"],
