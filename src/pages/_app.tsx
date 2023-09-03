@@ -52,12 +52,15 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <style jsx global>
         {`
+
           html {
             --jb-font: ${jb.style.fontFamily};
-            --jb-font: ${jb.style.fontFamily};
           }
+
         `}
+
       </style>
+
       <Analytics />
       <Component {...pageProps} />
     </>
