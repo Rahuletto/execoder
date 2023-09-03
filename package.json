@@ -1,13 +1,14 @@
 {
   "name": "execoder",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "license": "MPL-2.0",
   "dependencies": {
     "@replit/codemirror-css-color-picker": "^6.0.0",
     "@replit/codemirror-indentation-markers": "^6.4.3",
