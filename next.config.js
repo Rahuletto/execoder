@@ -11,12 +11,8 @@ const nextConfig = {
       layers: true,
     };
     config.resolve.fallback = {
-
-      // if you miss it, all the other options in fallback, specified
-      // by next.js will be dropped.
       ...config.resolve.fallback,  
-
-      fs: false, // the solution
+      fs: false,
     };
     return config;
   },
@@ -34,7 +30,7 @@ const nextConfig = {
       },
       {
         source: '/email',
-        destination: 'mailto:support@codeboard.tech',
+        destination: 'mailto:rahulmarban@gmail.com',
         permanent: true,
       },
       {
