@@ -27,7 +27,7 @@ export type Languages =
   | "typescript";
 
 export const LanguagesArray = [
-  { language: "shell", key: "Bash" },
+  { language: "shell", key: "Bash script" },
   { language: "c", key: "C" },
   { language: "objectiveCpp", key: "C++" },
   { language: "csharp", key: "C#" },

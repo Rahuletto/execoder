@@ -98,7 +98,6 @@ export default function Home() {
       stdin: input,
     })
       .then((out) => {
-        console.log(String(out.compiler_error));
 
         if (out.program_error || out.compiler_error)
           setError(out.program_error ? out.program_error : out.compiler_error);
@@ -116,7 +115,6 @@ export default function Home() {
 
   function newCoder() {
     const confirmation = confirm("Are you sure you want to create new coder?\nThe contents will not be saved!");
-    console.log(confirmation)
     if (confirmation == true) {
       localStorage.setItem("code", "");
       localStorage.setItem("inp", "");
