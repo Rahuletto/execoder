@@ -9,14 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@replit/codemirror-css-color-picker": "^6.0.0",
+    "@replit/codemirror-indentation-markers": "^6.4.3",
+    "@replit/codemirror-vscode-keymap": "^6.0.2",
     "@types/node": "20.5.4",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@uiw/codemirror-extensions-langs": "^4.21.9",
+    "@uiw/codemirror-theme-tokyo-night": "^4.21.9",
+    "@uiw/codemirror-theme-tokyo-night-day": "^4.21.9",
+    "@uiw/react-codemirror": "^4.21.9",
+    "@vercel/analytics": "^1.0.2",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
+    "prettier": "^2.8.8",
     "react": "18.2.0",
+    "react-contexify": "^6.0.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-dropdown": "^1.11.0",
+    "react-icons": "^4.10.1",
+    "react-loading-skeleton": "^3.3.1",
+    "typescript": "5.1.6",
+    "wandbox-api-updated": "^1.0.4"
   }
 }
