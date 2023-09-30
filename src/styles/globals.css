@@ -533,6 +533,7 @@ textarea {
   padding: 0px 8px;
   outline: none !important;
   resize: none;
+  min-height: 100px;
 }
 
 header {
