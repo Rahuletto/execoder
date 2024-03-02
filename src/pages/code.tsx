@@ -25,9 +25,7 @@ import { GetServerSidePropsContext } from "next";
 export default function Code() {
   const router = useRouter();
 
-  if (!router.query.lang || !router.query.prog) return router.push("/");
-
-  const [code, setCode] = useState(router.query.prog as string);
+  const [code, setCode] = useState('');
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -37,24 +35,15 @@ export default function Code() {
   const [compiler, setCompiler] = useState<string>(null);
   const [list, setList] = useState<{ value: string; label: string }[]>([]);
 
-  const [lang, setLang] = useState(router.query.lang as string);
+  const [lang, setLang] = useState('javascript');
   const [language, setLanguage] = useState(loadLanguage(lang as Languages));
 
   const [theme, setTheme] = useState<"light" | "dark" | string>();
 
   useEffect(() => {
     setTheme(localStorage.getItem("theme") || "dark");
-
-    window.addEventListener("keydown", (event) => {
-      if (
-        (event.shiftKey && event.altKey && event.key.toLowerCase() == "f") ||
-        (event.altKey && event.key.toLowerCase() == "f")
-      ) {
-        formatCode(code, lang).then((f) => {
-          setCode(f);
-        });
-      }
-    });
+    setCode(router.query.prog as string)
+    setLang(router.query.lang as string)
   }, []);
 
   useEffect(() => {
@@ -80,7 +69,6 @@ export default function Code() {
   }, [lang]);
 
   const onChange = useCallback((value: string) => {
-    localStorage.setItem("code", String(value));
     setCode(value);
     return;
   }, []);
@@ -285,5 +273,12 @@ const formatCode = async (code: string, language: string) => {
 };
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+  if (!context.query.lang || !context.query.prog) return {
+    redirect: {
+      permanent: false,
+      destination: "/"
+    }
+  }
+
   return { props: {} };
 }
