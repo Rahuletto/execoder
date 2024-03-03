@@ -43,13 +43,13 @@ export default function Code() {
   useEffect(() => {
     setTheme(localStorage.getItem("theme") || "dark");
     setCode(router.query.prog as string)
-    setLang(router.query.lang as string)
+    setLang((router.query.lang as string).replaceAll('cpp', 'objectiveCpp'))
   }, []);
 
   useEffect(() => {
     setLanguage(loadLanguage(lang as Languages));
 
-    getCompilers(LanguagesArray.find((a) => a.language == lang).key).then(
+    getCompilers(LanguagesArray.find((a) => a.language == lang)?.key || LanguagesArray.find((a) => a.language == 'c').key).then(
       (c) => {
         const l: { value: string; label: string }[] = [];
         c.forEach((comp) => {
